@@ -16,11 +16,11 @@ public class CanvasView extends View {
     public int width;
     public int height;
     Context context;
-    private Bitmap mBitmap;
-    private Canvas mCanvas;
-    private Path mPath;
-    private Paint mPaint;
-    private float mX, mY;
+    public Bitmap mBitmap;
+    public Canvas mCanvas;
+    public Path mPath;
+    public Paint mPaint;
+    public float mX, mY;
 
     public CanvasView(Context c, AttributeSet attrs) {
         super(c, attrs);
@@ -32,10 +32,10 @@ public class CanvasView extends View {
         // and we set a new Paint with the desired attributes
         mPaint = new Paint();
         mPaint.setAntiAlias(true);
-        mPaint.setColor(Color.BLACK);
+        mPaint.setColor(Color.RED);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeJoin(Paint.Join.ROUND);
-        mPaint.setStrokeWidth(6f);
+        mPaint.setStrokeWidth(10f);
     }
 
     // override onSizeChanged

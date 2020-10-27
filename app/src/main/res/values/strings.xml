@@ -7,4 +7,10 @@
     <string name="andriod">Andriod</string>
     <string name="textview">TextView</string>
     <string name="clear">Clear</string>
+    <string name="red_color">Red Color</string>
+    <string name="black_color">Black Color</string>
+    <string name="green_color">Green Color</string>
+    <string name="small_size">Small size</string>
+    <string name="medium_size">Medium Size</string>
+    <string name="large_size">Large Size</string>
 </resources>
