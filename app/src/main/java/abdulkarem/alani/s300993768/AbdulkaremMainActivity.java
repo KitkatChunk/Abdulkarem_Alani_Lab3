@@ -21,7 +21,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import static android.graphics.Color.BLACK;
 import static android.graphics.Color.GREEN;
 import static android.graphics.Color.RED;
-
+//Abdulkarem Alani 300993768 Lab3
 public class AbdulkaremMainActivity extends AppCompatActivity {
 
     private CanvasView customCanvas;
@@ -31,8 +31,8 @@ public class AbdulkaremMainActivity extends AppCompatActivity {
     private Button startButton, stopButton;
     private AnimationDrawable animationDrawable=null;
     Button btnStart;
-    ImageView iV_moon;
-    ImageView iV_earth;
+    ImageView moon;
+    ImageView earth;
 
     private Button clearButton;
     @Override
@@ -52,8 +52,8 @@ public class AbdulkaremMainActivity extends AppCompatActivity {
         NavigationUI.setupWithNavController(navView, navController);
 
         btnStart = findViewById(R.id.startMoonBtn);
-        iV_moon =findViewById(R.id.moon);
-        iV_earth=findViewById(R.id.earth);
+        moon =findViewById(R.id.moon);
+        earth=findViewById(R.id.earth);
 
        clearButton = (Button) findViewById(R.id.abdulClearbtn);
 
@@ -151,8 +151,8 @@ public class AbdulkaremMainActivity extends AppCompatActivity {
         Animation moonAnimation = AnimationUtils.loadAnimation(this,R.anim.moon_movment);
         Animation earthAnimation = AnimationUtils.loadAnimation(this,R.anim.spin_around);
 
-        iV_earth.startAnimation(earthAnimation);
-        iV_moon.startAnimation(moonAnimation);
+        earth.startAnimation(earthAnimation);
+        moon.startAnimation(moonAnimation);
 
     }
 

@@ -9,7 +9,7 @@ import android.graphics.Path;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-
+//Abdulkarem Alani 300993768 Lab3
 public class CanvasView extends View {
 
     private static final float TOLERANCE = 5;
