@@ -1,8 +1,13 @@
 package abdulkarem.alani.s300993768;
 
+import android.graphics.drawable.AnimationDrawable;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.RadioButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,9 +27,17 @@ public class AbdulkaremMainActivity extends AppCompatActivity {
     private CanvasView customCanvas;
     private Button updateButton;
 
+    private ImageView imageView;
+    private Button startButton, stopButton;
+    private AnimationDrawable animationDrawable=null;
+    Button btnStart;
+    ImageView iV_moon;
+    ImageView iV_earth;
+
     private Button clearButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.abdulkarem_activity);
@@ -38,15 +51,35 @@ public class AbdulkaremMainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(navView, navController);
 
+        btnStart = findViewById(R.id.startMoonBtn);
+        iV_moon =findViewById(R.id.moon);
+        iV_earth=findViewById(R.id.earth);
+
        clearButton = (Button) findViewById(R.id.abdulClearbtn);
 
         customCanvas = (CanvasView) findViewById(R.id.canvasView);
 
 
+        // CLick button just crashes the app.
+//        findViewById(R.id.startAnimBtn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startDisplaying(view);
+//            }
+//        });
+
+        // CLick button just crashes the app.
 //        findViewById(R.id.abdulClearbtn).setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                setContentView(R.layout.abdulkarem_fragment_home);
+//            }
+//        });
+
+//        findViewById(R.id.startMoonBtn).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startmoonAnim(view);
 //            }
 //        });
 
@@ -55,6 +88,25 @@ public class AbdulkaremMainActivity extends AppCompatActivity {
 
     }
 
+    public void startDisplaying(View view){
+        BitmapDrawable frame1= (BitmapDrawable) getResources().getDrawable(R.drawable.anim1);
+        BitmapDrawable frame2=(BitmapDrawable) getResources().getDrawable(R.drawable.anim2);
+        BitmapDrawable frame3=(BitmapDrawable) getResources().getDrawable(R.drawable.anim3);
+        BitmapDrawable frame4=(BitmapDrawable) getResources().getDrawable(R.drawable.anim4);
+        BitmapDrawable frame5=(BitmapDrawable) getResources().getDrawable(R.drawable.anim5);
+
+
+        animationDrawable = new AnimationDrawable();
+        animationDrawable.addFrame(frame1,220);
+        animationDrawable.addFrame(frame2,220);
+        animationDrawable.addFrame(frame3,220);
+        animationDrawable.addFrame(frame4,220);
+        animationDrawable.addFrame(frame5,220);
+
+        imageView.setImageDrawable(animationDrawable);
+        animationDrawable.start();
+
+    }
 
     public void onRadioButtonClicked(View view) {
         // Is the button now checked?
@@ -94,6 +146,15 @@ public class AbdulkaremMainActivity extends AppCompatActivity {
         }
     }
 
+    public void startmoonAnim(View view)
+    {
+        Animation moonAnimation = AnimationUtils.loadAnimation(this,R.anim.moon_movment);
+        Animation earthAnimation = AnimationUtils.loadAnimation(this,R.anim.spin_around);
+
+        iV_earth.startAnimation(earthAnimation);
+        iV_moon.startAnimation(moonAnimation);
+
+    }
 
 
 

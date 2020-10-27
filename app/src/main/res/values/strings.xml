@@ -13,4 +13,7 @@
     <string name="small_size">Small size</string>
     <string name="medium_size">Medium Size</string>
     <string name="large_size">Large Size</string>
+    <string name="alani">Alani</string>
+    <string name="abdulkarem">Abdulkarem</string>
+    <string name="button">Button</string>
 </resources>
